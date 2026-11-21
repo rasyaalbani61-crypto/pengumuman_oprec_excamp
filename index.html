@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengumuman Panitia Expo Campus | SMAN 1 Sekaran</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Lilita+One&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="kunci">
+
+  <!-- ================= INTRO: JENDELA KAPAL ================= -->
+  <div class="intro" id="intro">
+    <div class="intro-isi">
+      <div class="porthole">
+        <div class="porthole-kaca">
+          <div class="pg pg1"></div><div class="pg pg2"></div><div class="pg pg3"></div><div class="pg pg4"></div>
+          <div class="porthole-kilau"></div>
+        </div>
+      </div>
+      <div class="intro-teks">
+        <p class="intro-kecil">Pengumuman Open Recruitment</p>
+        <h1 class="intro-judul">Expo Campus<span>SMAN 1 Sekaran</span></h1>
+        <button class="tombol" id="mulai" type="button">Mulai Menyelam</button>
+        <p class="intro-hint">Tarik napas dulu, kita turun ke dasar laut</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= LATAR TETAP ================= -->
+  <div class="latar">
+    <div class="gelap" id="gelap"></div>
+    <div class="sinar" id="sinar"></div>
+    <svg class="kaustik" id="kaustik" aria-hidden="true">
+      <defs>
+        <filter id="fk" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="2" seed="4" result="n">
+            <animate attributeName="baseFrequency" dur="34s" values="0.012 0.02;0.022 0.012;0.012 0.02" repeatCount="indefinite"/>
+          </feTurbulence>
+          <feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 9 -4.3"/>
+        </filter>
+      </defs>
+      <rect width="100%" height="100%" filter="url(#fk)"/>
+    </svg>
+    <div class="gelembung-wrap" id="gelembungWrap"></div>
+    <div class="partikel" id="partikel"></div>
+  </div>
+
+  <!-- ================= HEWAN DI BELAKANG ================= -->
+  <div class="lapis belakang" id="belakang" aria-hidden="true">
+    <div class="swim" style="--top:12%;--w:400px;--dur:75s;--delay:-14s">
+      <img class="bob" src="paus.png" alt="" onerror="this.style.display='none'">
+    </div>
+    <div class="swim balik" style="--top:64%;--w:160px;--dur:58s;--delay:-30s">
+      <img class="bob" src="penyu.png" alt="" onerror="this.style.display='none'">
+    </div>
+    <div class="swim kawanan" style="--top:38%;--w:200px;--dur:34s;--delay:-6s">
+      <img class="bob k1" src="ikan.png" alt="" onerror="this.style.display='none'">
+      <img class="bob k2" src="ikan.png" alt="" onerror="this.style.display='none'">
+      <img class="bob k3" src="ikan.png" alt="" onerror="this.style.display='none'">
+      <img class="bob k4" src="ikan.png" alt="" onerror="this.style.display='none'">
+      <img class="bob k5" src="ikan.png" alt="" onerror="this.style.display='none'">
+    </div>
+    <div class="melayang" style="--x:7%;--top:44%;--w:95px;--dur:9s">
+      <img src="ubur.png" alt="" onerror="this.style.display='none'">
+    </div>
+    <div class="melayang" style="--x:84%;--top:68%;--w:75px;--dur:11s;--dl:-4s">
+      <img src="ubur.png" alt="" onerror="this.style.display='none'">
+    </div>
+  </div>
+
+  <!-- ================= HEWAN DI DEPAN ================= -->
+  <div class="lapis depan" id="depan" aria-hidden="true">
+    <div class="swim" style="--top:54%;--w:84px;--dur:24s;--delay:-3s">
+      <img class="bob" src="ikan1.png" alt="" onerror="this.style.display='none'">
+    </div>
+    <div class="swim balik" style="--top:80%;--w:105px;--dur:31s;--delay:-14s">
+      <img class="bob" src="ikan1.png" alt="" onerror="this.style.display='none'">
+    </div>
+  </div>
+
+  <!-- ================= METER KEDALAMAN ================= -->
+  <aside class="meter" aria-hidden="true">
+    <span class="m-label">0 m</span>
+    <div class="m-garis"><i class="m-tanda" id="tanda"><b id="kedalaman">0 m</b></i></div>
+    <span class="m-label">300 m</span>
+  </aside>
+
+  <!-- ================= HALAMAN ================= -->
+  <div class="halaman">
+
+    <!-- Permukaan laut -->
+    <div class="permukaan" aria-hidden="true">
+      <div class="langit"></div>
+      <div class="matahari"></div>
+      <div class="awan awan1"></div>
+      <div class="awan awan2"></div>
+      <div class="gelombang g1"></div>
+      <img class="kapal-atas" src="kapal.png" alt="" onerror="this.style.display='none'">
+      <div class="gelombang g2"></div>
+      <div class="gelombang g3"></div>
+    </div>
+
+    <header class="hero">
+      <span class="pita" style="--n:0">Pengumuman Open Recruitment</span>
+      <h1 class="judul" style="--n:1" aria-label="Panitia Expo Campus">
+        <span class="baris1" data-huruf>Panitia</span>
+        <span class="baris2" data-huruf>Expo Campus</span>
+      </h1>
+      <div class="banner" style="--n:2"><span>SMAN 1 Sekaran</span></div>
+      <p class="kata" style="--n:3">Selamat buat kalian yang lolos! Cari namamu di bawah, atau langsung pilih sie dan lihat siapa aja timnya.</p>
+
+      <div class="cari" style="--n:4">
+        <label for="cari">Cek namamu</label>
+        <input id="cari" type="search" placeholder="Ketik namamu di sini..." autocomplete="off">
+        <ul class="hasil" id="hasil"></ul>
+      </div>
+
+      <div class="turun" style="--n:5">Selam lebih dalam<i></i></div>
+    </header>
+
+    <section class="area-kotak">
+      <div class="judul-bagian"><span>Pilih sie, lihat namanya</span></div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <!-- Dasar laut -->
+    <section class="dasar">
+      <div class="dasar-teks">
+        <h3>Kamu sudah sampai dasar laut!</h3>
+        <p>Sampai jumpa di Expo Campus SMAN 1 Sekaran.</p>
+        <button class="tombol" id="naik" type="button">Naik ke permukaan</button>
+      </div>
+
+      <img class="d d-kapal"    src="kapalselam.png"  alt="" onerror="this.style.display='none'">
+      <img class="d d-karang1"  src="karang.png"       alt="" onerror="this.style.display='none'">
+      <img class="d d-rumput1"  src="rumputlaut.png"  alt="" onerror="this.style.display='none'">
+      <img class="d d-jangkar"  src="jangkar.png"      alt="" onerror="this.style.display='none'">
+      <img class="d d-kuda"     src="kudalaut.png"    alt="" onerror="this.style.display='none'">
+      <img class="d d-bintang"  src="bintanglaut.png" alt="" onerror="this.style.display='none'">
+      <img class="d d-rumput2"  src="rumputlaut.png"  alt="" onerror="this.style.display='none'">
+      <img class="d d-karang2"  src="karang.png"      alt="" onerror="this.style.display='none'">
+      <img class="d d-kepiting" src="kepiting.png" onerror="this.style.display='none'">
+      <img class="d d-peti"     src="kotak.png"    alt="" onerror="this.style.display='none'">
+      <img class="d d-kerang"   src="karang.png"       alt="" onerror="this.style.display='none'">
+      <img class="d d-rumput3"  src="rumputlaut.png"  alt="" onerror="this.style.display='none'">
+      <span class="kilap kl1"></span><span class="kilap kl2"></span><span class="kilap kl3"></span>
+
+      <svg class="pasir" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 80 C240 20 480 120 720 70 S1200 20 1440 80 V200 H0Z" fill="#cfa968"/>
+        <path d="M0 125 C300 75 520 155 800 112 S1220 85 1440 125 V200 H0Z" fill="#e8c98a"/>
+      </svg>
+    </section>
+  </div>
+
+  <!-- ================= PETA HARTA KARUN (POPUP) ================= -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="peta" role="dialog" aria-modal="true" aria-labelledby="petaJudul">
+      <button class="tutup" id="tutup" type="button" aria-label="Tutup">&times;</button>
+      <div class="segel" id="petaNomor">1</div>
+      <div class="peta-isi">
+        <p class="peta-kecil">Daftar yang lolos</p>
+        <h3 id="petaJudul">Sie</h3>
+        <p class="peta-jumlah" id="petaJumlah"></p>
+        <ol class="daftar" id="petaDaftar"></ol>
+      </div>
+    </div>
+  </div>
+
+  <script src="node.js"></script>
+</body>
+</html>
